@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Richard hanrick">Elodie Blairet</h1>
+
+          <p class="title">Analyste BI</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <i class="fas fa-envelope"></i>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:richard@example.com" class="contact-link">elodie.b22@orange.fr</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <i class="fas fa-phone"></i> 
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Téléphone</p>
+
+              <a href="tel:+12133522795" class="contact-link">06 43 71 30 61</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Adresse</p>
+
+              <address>Dreui-lès-Amiens, Somme</address>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Âge</p>
+
+              <time datetime="1982-06-23">23 ans</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <i class="fas fa-car"></i>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Voiture</p>
+
+              <time datetime="1982-06-23">Permis B</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <i class="fas fa-motorcycle"></i>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Moto</p>
+
+              <time datetime="1982-06-23">Formation 125</time>
+            </div>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Sur moi</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Résumé</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projets</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="sur moi">
+
+        <header>
+          <h2 class="h2 article-title">A propos de moi</h2>
+        </header>
+
+        <section class="about-text">
+          <p>Je suis actuellement étudiante en <b>Master MIAGE option Data</b> et je me spécialise dans l’<b>analyse et la valorisation des données</b>. 
+            Actuellement, je travaille sur le <b>développement C#</b> ainsi que sur des projets <b>DevOps</b> (pipeline CI/CD, hébergements IIS et Linux). 
+            J’aime transformer des données complexes en <b>informations claires, pertinentes et visuellement parlantes</b>.
+          </p>
+
+          <p>
+            Mon objectif est de concevoir des <b>solutions BI</b> fiables, performantes et faciles à exploiter, 
+            tout en offrant une vision claire pour la prise de décision. J’apporte une touche personnelle à chaque projet 
+            afin de créer des rapports et tableaux de bord <b>esthétiques et intuitifs</b>.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">Ce que je fais</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="analytics-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Business Intelligence</h4>
+
+                <p class="service-item-text">
+                  Conception de rapports Power BI et tableaux de bord interactifs pour transformer les données en informations stratégiques.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="server-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">SQL & Gestion des données</h4>
+
+                <p class="service-item-text">
+                  Écriture de requêtes SQL complexes, modélisation et optimisation de bases de données pour améliorer la performance.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="code-slash-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Développement C#</h4>
+
+                <p class="service-item-text">
+                  Développement et maintien d’applications en C# pour la gestion et l’automatisation des processus.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="cloud-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">DevOps & CI/CD</h4>
+
+                <p class="service-item-text">
+                  Mise en place de pipelines CI/CD, déploiement sur IIS et Linux et automatisation des environnements de développement.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </section>
+
+        </div>
+
+      </article>
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="résumé">
+
+        <header>
+          <h2 class="h2 article-title">Résumé</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Expérience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Isagri - Alternance</h4>
+              <span>Septembre 2023 — Août 2025</span>
+              <p class="timeline-text">
+                Développement et déploiement d’un back-office en C# avec mise en place de pipelines CI/CD et tests d'hébergement sur IIS et Linux.
+                Gestion des migrations SQL 2016 vers SQL 2019 puis SQL 2019 vers SQL 2022.
+                Prise en charge du monitoring de l'application via Application insights : mise en place de métriques et création d'un tableau de bord.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Boutté - Alternance</h4>
+              <span>Septembre 2022 — Août 2023</span>
+              <p class="timeline-text">
+                Automatisation de la gestion du catalogue de ventes via une interface web.
+                Automatisation de la prévision des ventes via une interface web.
+                Mise à jour et contrôle des ERP.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Boutté - Stage</h4>
+              <span>Avril 2022 — Juin 2022</span>
+              <p class="timeline-text">
+                Création d'un programme de gestion des stocks.
+                Contrôle et mise à jour de la base de données concernant les produits (dimensions, code-barre...).
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Scolarité</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">UPJV - MIAGE</h4>
+
+              <span>2023 — 2025</span>
+
+              <p class="timeline-text">
+                Ingénierie des données et aide à la décision.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">IUT - Informatique</h4>
+
+              <span>2020 — 2023</span>
+
+              <p class="timeline-text">
+                Option ERP.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="construct-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Compétences</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Power BI</h4>
+              <span>Analyse décisionnelle</span>
+              <p class="timeline-text">
+                <b>Réalisations</b> : Création de tableaux de bord interactifs, intégration multi-sources, mesures DAX personnalisées, support entre collègues.<br>
+                <b>Outils</b> : Power BI Desktop, Power Query, SQL Server.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">SQL Server</h4>
+              <span>Gestion des données</span>
+              <p class="timeline-text">
+                <b>Réalisations</b> : Requêtes complexes, procédures stockées, optimisation de bases et performance des requêtes, gestion des mises à jour de version.<br>
+                <b>Outils</b> : SSMS, Azure Data Studio.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">C# / .NET Core</h4>
+              <span>Développement d'interfaces web</span>
+              <p class="timeline-text">
+                <b>Réalisations</b> : Implémentation en clean architecture et rédaction de documentations, création de tests unitaires, développement de modules métier.<br>
+                <b>Outils</b> : Visual Studio, .NET Core 8, Azure DevOps.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Clean Architecture</h4>
+              <span>Structuration de projets</span>
+              <p class="timeline-text">
+                <strong>Réalisations</strong> : Organisation Domain/Application/Infrastructure, injection de dépendances, tests unitaires.<br>
+                <strong>Outils</strong> : .NET Core, Visual Studio, MSTest, Moq.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">DevOps / CI-CD</h4>
+              <span>Automatisation & hébergement</span>
+              <p class="timeline-text">
+                <strong>Réalisations</strong> : Pipelines CI/CD, vérifications SonarQube (code smell, couverture de code), hébergement IIS et Linux.<br>
+                <strong>Outils</strong> : Azure DevOps Pipelines, SonarQube, Docker, IIS, Ubuntu Server.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+      </article>
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="projets">
+
+        <header>
+          <h2 class="h2 article-title">Projets</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>BI</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>C#</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>HTML</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>BI</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>C#</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>HTML</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="bi">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projet-bi_volcan.png" alt="volcan" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Volcan</h3>
+
+                <p class="project-category">BI</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="bi">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projet-bi_crimes.png" alt="crimes" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Crimes</h3>
+
+                <p class="project-category">BI</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="c#">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projet-etudedecas_maquette.png" alt="gestion pédagogique" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Gestion pédagogique</h3>
+
+                <p class="project-category">C#</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="html">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projet-laurie_acceuil.png" alt="artiste" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Artiste</h3>
+
+                <p class="project-category">HTML</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="c#">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projet-heros_console.png" alt="console" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Console</h3>
+
+                <p class="project-category">C#</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="bi">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projet-bi_ticketing.png" alt="ticketing" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Ticketing</h3>
+
+                <p class="project-category">BI</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="html">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projet-tintin_avion.png" alt="collection" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Collection</h3>
+
+                <p class="project-category">HTML</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="bi">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projet-bi_meteo.png" alt="météo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Météo</h3>
+
+                <p class="project-category">BI</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="c#">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projet-universite_etudiants.png" alt="université" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Université</h3>
+
+                <p class="project-category">C#</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
