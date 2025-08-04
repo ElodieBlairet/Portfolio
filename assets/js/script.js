@@ -14,47 +14,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
-
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
-  });
-
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
-
-
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -157,3 +116,36 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+const projectItems = document.querySelectorAll('.project-item');
+const modal = document.getElementById('project-modal');
+const modalImg = document.getElementById('modal-image');
+const modalTitle = document.getElementById('modal-title');
+const modalCategory = document.getElementById('modal-category');
+const modalClose = document.querySelector('.modal-close');
+
+projectItems.forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault(); // empêche le lien <a> de recharger la page
+
+    const img = item.querySelector('img').getAttribute('src');
+    const title = item.querySelector('.project-title').textContent;
+    const category = item.querySelector('.project-category').textContent;
+
+    modalImg.src = img;
+    modalTitle.textContent = `Titre : ${title}`;
+    modalCategory.textContent = `Catégorie : ${category}`;
+
+    modal.style.display = 'flex';
+  });
+});
+
+modalClose.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});

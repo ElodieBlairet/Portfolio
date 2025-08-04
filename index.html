@@ -53,7 +53,7 @@
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+          <span>Afficher les informations de contact</span>
 
           <ion-icon name="chevron-down"></ion-icon>
         </button>
@@ -288,24 +288,6 @@
 
         </section>
 
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-          </section>
-
-        </div>
-
       </article>
 
       <!--
@@ -500,7 +482,7 @@
 
             <button class="filter-select" data-select>
 
-              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-value" data-selecct-value>Choisir une catégorie</div>
 
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
@@ -700,14 +682,18 @@
 
       </article>
 
+      <div id="project-modal" class="modal">
+        <div class="modal-content">
+          <span class="modal-close">&times;</span>
+          <h3 id="modal-title"></h3>
+          <p id="modal-description"></p>
+          <div id="modal-gallery" class="modal-gallery"></div>
+        </div>
+      </div>
+
     </div>
 
   </main>
-
-
-
-
-
 
   <!--
     - custom js link
@@ -719,6 +705,117 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    const modal = document.getElementById("project-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
+    const modalGallery = document.getElementById("modal-gallery");
+    const closeBtn = document.querySelector(".modal-close");
+
+    const projectData = {
+      "Volcan": {
+        description: "Analyse des éruptions volcaniques avec Power BI. Connexion à une API. Corrélation entre activité volcanique et climat.",
+        images: [
+          "./assets/images/projet-bi_volcan.png",
+          "./assets/images/volcan2.png",
+          "./assets/images/volcan3.png"
+        ]
+      },
+      "Crimes": {
+        description: "Rapport interactif sur la criminalité à San Francisco. Intégration via fichier Excel. Carte géographique et indicateurs dynamiques.",
+        images: [
+          "./assets/images/projet-bi_crimes.png",
+          "./assets/images/crimes2.png",
+          "./assets/images/crimes3.png"
+        ]
+      },
+      "Gestion pédagogique": {
+        description: "Projet académique de fin d'année. Permettant d'automatiser la gestion pédadogique (professeurs, UEs, maquettes pédagogique, suivi des heures effectuées...)",
+        images: [
+          "./assets/images/projet-etudedecas_maquette.png",
+          "./assets/images/volcan2.png",
+          "./assets/images/volcan3.png"
+        ]
+      },
+      "Artiste": {
+        description: "Site web permettant à une artiste de se faire connaître. Lien vers ses réseaux sociaux, page d'acualité et photos de ses oeuvres.",
+        images: [
+          "./assets/images/projet-laurie_acceuil.png",
+          "./assets/images/crimes2.png",
+          "./assets/images/crimes3.png"
+        ]
+      },
+      "Console": {
+        description: "Projet console permettant d'incarner un héros qui combat des monstres. Gestion des classes de monstres en C#.",
+        images: [
+          "./assets/images/projet-heros_console.png",
+          "./assets/images/volcan2.png",
+          "./assets/images/volcan3.png"
+        ]
+      },
+      "Ticketing": {
+        description: "Rapport interactif sur l'efficacité d'une équipe ticketing. Données récupérées via fichier Excel.",
+        images: [
+          "./assets/images/projet-bi_ticketing.png",
+          "./assets/images/projet-bi_ticketing2.png",
+          "./assets/images/crimes3.png"
+        ]
+      },
+      "Collection": {
+        description: "Interface web permettant à un collectionneur de partager ses trouvailles.",
+        images: [
+          "./assets/images/projet-tintin_avion.png",
+          "./assets/images/crimes2.png",
+          "./assets/images/crimes3.png"
+        ]
+      },
+      "Météo": {
+        description: "Rapport sur la prévision météorologique. Visuels récupérés sur GitHub. Liaison avec une API.",
+        images: [
+          "./assets/images/projet-bi_meteo.png",
+          "./assets/images/crimes2.png",
+          "./assets/images/crimes3.png"
+        ]
+      },
+      "Université": {
+        description: "Interface web pour gérer les professeurs et leurs UEs ainsi que les étudiants et leurs notes.",
+        images: [
+          "./assets/images/projet-universite_etudiants.png",
+          "./assets/images/projet-universite_etudiantscreate.png",
+          "./assets/images/projet-universite_enseignant.png"
+        ]
+      }
+    };
+
+    document.querySelectorAll(".project-item a").forEach(link => {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const projectItem = this.closest(".project-item");
+        const titleElement = projectItem.querySelector(".project-title");
+        if (!titleElement) return;
+
+        const title = titleElement.textContent.trim();
+        const data = projectData[title];
+        if (!data) return;
+
+        modalTitle.textContent = title;
+        modalDescription.textContent = data.description;
+        modalGallery.innerHTML = data.images.map(src => `<img src="${src}" alt="">`).join("");
+        modal.style.display = "block";
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
 
