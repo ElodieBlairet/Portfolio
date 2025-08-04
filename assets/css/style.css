@@ -1571,44 +1571,95 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
-  .modal {
-    display: none;
+  #project-modal {
     position: fixed;
-    z-index: 999;
-    left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1000;
   }
 
   .modal-content {
-  background-color: #1f1f1f;
-  margin: 5% auto;
-  padding: 20px;
-  border-radius: 12px;
-  width: 80%;
-  max-width: 800px;
-  color: white;
-}
+    position: relative;
+    background: #0f0f0f;
+    color: white;
+    border-radius: 12px;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow: hidden;
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-.modal-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+  .modal-gallery {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #111;
+    border-radius: 10px;
+  }
 
-.modal-gallery img {
-  width: 30%;
-  border-radius: 8px;
-}
+  .modal-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.25s ease;
+  }
 
-.modal-close {
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
+  .modal-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* voir toute l’image */
+    border-radius: 6px;
+  }
 
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.35);
+    border: none;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    user-select: none;
+  }
+
+  .nav.prev { left: 10px; }
+  .nav.next { right: 10px; }
+
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+  }
 }
